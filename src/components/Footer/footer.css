@@ -1,0 +1,59 @@
+/* Your existing styles for the footer */
+.footer {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer p {
+    font-family: sans-serif;
+    margin: 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 24px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  /* Styles for the social icons */
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 0;
+    color: #333;
+  }
+  
+  .social a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .social a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .social {
+      /* flex-direction: column; */
+      text-align: center;
+      margin: 1rem;
+      gap: 1rem;
+    }
+  
+    .social a {
+      margin: 10px 0;
+    }
+    .footer p {
+      font-family: sans-serif;
+      margin: 0;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 24px;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+  }
+  

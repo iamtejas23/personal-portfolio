@@ -1,0 +1,83 @@
+/* Base styles */
+.navbar {
+    height: 5rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background-color: #000000;
+    color: white;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.logo {
+    font-family: sans-serif;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 24px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.logo:hover {
+    color: #f27a44;
+}
+
+.desktopMenuListItem {
+    margin: 1rem;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    font-family: sans-serif;
+}
+
+.desktopMenuListItem:hover {
+    
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #ffffff;
+}
+
+.btn1 {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn1:hover {
+    transform: translateY(-5px);
+}
+
+.btn1 img{
+    max-width: 48px;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .desktopMenuListItem {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 14px;
+        display: none;
+    }
+
+    .desktopMenuListItem {
+        margin: 0.3rem;
+        font-size: 12px;
+    }
+   
+}
