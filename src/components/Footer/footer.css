@@ -4,6 +4,8 @@
     color: #000000;
     text-align: center;
     padding: 20px 0;
+    position: sticky;
+            bottom: 0;
   }
   
   .footer p {

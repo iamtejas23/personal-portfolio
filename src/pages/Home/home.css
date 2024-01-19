@@ -1,0 +1,13 @@
+/* .home{
+    margin-left: 250px;
+} */
+
+.gitcard{
+    padding: 2rem;
+}
+
+@media (min-width: 768px) {
+    .home{
+        margin-left: 250px;
+    }
+  }

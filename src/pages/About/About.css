@@ -1,0 +1,61 @@
+/* About.css */
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 5rem;
+    background-color: #1d1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* margin-right: 0.5rem; */
+    /* border-bottom: 1px solid #ddd; */
+    margin-top: 1rem;
+  }
+
+  .abt{
+    border-bottom: 2px solid #61dafb;
+  }
+  
+  .about-container h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .about-container p {
+    line-height: 1.6;
+    color: #ccc;
+  }
+  
+  .about-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about-container li {
+    margin-bottom: 8px;
+  }
+  
+  .about-container h3 {
+    color: #ccc;
+    margin-top: 20px;
+  }
+  
+  .education-item {
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .education-item h4 {
+    color: #ccc;
+  }
+  
+  /* Media query for responsiveness */
+  @media only screen and (max-width: 600px) {
+    .about-container {
+      padding: 10px;
+      margin-top: 5rem;
+    }
+  }
+  

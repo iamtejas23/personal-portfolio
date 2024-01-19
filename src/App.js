@@ -1,23 +1,24 @@
-
+// App.js
 import React from 'react';
-import Menu from './components/Menu/Menu';
-import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Contact from './components/Contact/Contact'
-import Footer from './components/Footer/Footer';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SideNav from './components/SideNav/SideNav';
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 
 const App = () => {
   return (
-    
-      <div className="App">
-       <Menu/>
-       <Hero/>
-       <About/>
-       <Contact/>
-       <Footer/>
+    <Router>
+      <SideNav />
+      <div className='main-app' style={{ display: 'flex' }}>
+        
+        <Routes>
+          <Route path="/" exact element={<Home/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact" element={<Contact/>} />
+        </Routes>
       </div>
-    
+    </Router>
   );
 };
 
