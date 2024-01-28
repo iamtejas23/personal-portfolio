@@ -45,6 +45,11 @@
 
   .blog-card a{
     text-decoration: none;
-    color: whitesmoke;
+    color: #ccc;
   }
 
+.card-description{
+  margin-top: 10px;
+  /* margin-bottom: 10px;  */
+  color: #ccc;
+}
