@@ -17,7 +17,7 @@
 
   .skills-card {
     /* border: 1px solid #ccc; */
-    background-color: #1C1B23;
+    background-color: #1c1b2326;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -42,7 +42,8 @@
     text-decoration: none;
     color: #ffffff;
     text-align: center;
-    border-bottom: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
   }
 
   .oth:hover{
