@@ -17,11 +17,12 @@
     /* border: 1px solid #ccc; */
     padding: 20px;
     /* text-align: center; */
-    background-color: #1C1B23;
+    /* background-color: #1C1B23; */
     border-radius: 10px;
     /* cursor: pointer; */
     transition: transform 0.3s ease;
     color: rgb(255, 255, 255);
+    background: linear-gradient(to right, #2e2e2e20, #303030); /* Dark gradient background */
   }
 
   /* .blog-card:hover{
