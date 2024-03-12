@@ -34,7 +34,8 @@
     padding: 0.7rem;
     /* background-color: #35343a; */
     /* border: 1px solid; */
-    border-radius: 5px;
+    border-radius: 10px;
+    border: dotted ;
     transition: transform 0.3s ease;
   }
 

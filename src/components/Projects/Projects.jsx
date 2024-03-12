@@ -12,10 +12,10 @@ import pro4 from '../../assets/4.png';
 const projectsData = [
   {
     id: 1,
-    name: 'Thunder Wallet',
-    description: 'React Native App to manage expenses.',
+    name: 'Airbnb Clone',
+    description: 'Crafting an Airbnb clone in Next.js',
     image: pro1,
-    link: 'https://github.com/iamtejas23/thunder-wallet', // Specify the route for the project
+    link: 'https://github.com/iamtejas23/air-bnb-clone', // Specify the route for the project
   },
   {
     id: 2,
@@ -26,8 +26,8 @@ const projectsData = [
   },
   {
     id: 3,
-    name: 'Git Profile Generator',
-    description: 'GitHub API for profile generator.',
+    name: 'Track Finder App',
+    description: 'Track finder app using APIs .',
     image: pro3,
     link: 'https://github.com/iamtejas23/git-portfolio-generator', // External link
   },

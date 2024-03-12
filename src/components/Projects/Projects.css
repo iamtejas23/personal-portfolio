@@ -32,6 +32,11 @@
   overflow: hidden; /* Hide overflowing content */
 }
 
+.project-card p{
+  color: #ccc; /* White text */
+  
+}
+
 .project-card:hover {
   transform: translateY(-5px) scale(1.02); /* Scale on hover for depth */
 }
