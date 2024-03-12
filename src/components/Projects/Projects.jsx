@@ -29,7 +29,7 @@ const projectsData = [
     name: 'Track Finder App',
     description: 'Track finder app using APIs .',
     image: pro3,
-    link: 'https://github.com/iamtejas23/git-portfolio-generator', // External link
+    link: 'https://github.com/iamtejas23/track-finder-app', // External link
   },
   {
     id: 4,
