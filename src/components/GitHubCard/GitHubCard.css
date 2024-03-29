@@ -52,8 +52,8 @@
     font-size: 16px;
     text-align: center;
     text-decoration: none;
-    background-color: #ffffff;
-    color: #1c1b23;
+    background-color: #000000;
+    color: #e2e2e2;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -61,7 +61,7 @@
   }
   
   .github-follow-button:hover {
-    background-color: #34495e;
+    background-color: #75757571;
   }
   
   @media (max-width: 600px) {
