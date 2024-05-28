@@ -26,10 +26,10 @@ const projectsData = [
   },
   {
     id: 3,
-    name: 'Track Finder App',
-    description: 'Track finder app using APIs .',
+    name: 'Zomato Clone',
+    description: 'Zomato clone in React.js',
     image: pro3,
-    link: 'https://github.com/iamtejas23/track-finder-app', // External link
+    link: 'https://github.com/iamtejas23/react-zomato-clone', // External link
   },
   {
     id: 4,
