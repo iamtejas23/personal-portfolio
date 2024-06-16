@@ -8,7 +8,7 @@ const GitHubCard = () => {
     <div className="github-card">
       <div className="logo-al">
       <img src={logo} alt="Your Logo" className="github-logo" /> <span>Tejas Mane <br/>
-       <p> Frontend Devloper / Devops Engineer</p> </span>
+       <p> Frontend De / Devops Engineer</p> </span>
       </div>
       <a
         href="https://github.com/your-username"
