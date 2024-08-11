@@ -8,8 +8,34 @@ import pro1 from '../../assets/1.png';
 import pro2 from '../../assets/2.png';
 import pro3 from '../../assets/3.png';
 import pro4 from '../../assets/4.png';
+import dev1 from '../../assets/netflix.gif';
+import dev2 from '../../assets/docker.gif';
+import dev3 from '../../assets/argo.gif';
 
 const projectsData = [
+  {
+    id: 5,
+    name: 'Netflix Project CI/CD',
+    description: 'Automating the CI/CD pipeline for my applications.',
+    image: dev1,
+    link: 'https://www.linkedin.com/posts/iamtejas23_netflixtech-devops-cicd-activity-7214626995161210880-VJFQ?utm_source=share&utm_medium=member_desktop',
+  },
+  {
+    id: 6,
+    name: 'Docker Project CI/CD',
+    description: 'An automated CI/CD pipeline for Dockerized applications!',
+    image: dev2,
+    link: 'https://www.linkedin.com/posts/iamtejas23_devops-cicd-docker-activity-7217474136330162176-RbDP?utm_source=share&utm_medium=member_desktop',
+  },
+  {
+    id: 7,
+    name: 'Argo CD Project',
+    description: 'DevOps project leveraging ArgoCD and kOps on AWS!',
+    image: dev3,
+    link: 'https://www.linkedin.com/posts/iamtejas23_gitops-argocd-kops-activity-7222513866822344705-8SO-?utm_source=share&utm_medium=member_desktop',
+  },
+  
+  // Add more projects as needed
   {
     id: 1,
     name: 'Airbnb Clone',
@@ -38,7 +64,6 @@ const projectsData = [
     image: pro4,
     link: 'https://github.com/iamtejas23/rapidquest',
   },
-  // Add more projects as needed
 ];
 
 const Projects = () => {

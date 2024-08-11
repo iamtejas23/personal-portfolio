@@ -1,6 +1,6 @@
 import React from 'react';
 import './Skills.css'; // Import your CSS file
-import { Link } from 'react-router-dom';
+
 
 
 const Skills = () => {
@@ -59,19 +59,7 @@ const Skills = () => {
         </div>
 
         {/* Databases Card */}
-        <div className="skills-card">
-        <h3>Other Projects</h3>
-        <div className="otherskills">
-          <ul>
-            <Link target="_blank" rel="noopener noreferrer" to='https://github.com/iamtejas23/e-commerce-app' className='oth' >E-Commerce App</Link>
-            <Link target="_blank" rel="noopener noreferrer" to='https://github.com/iamtejas23/snippet-stack' className='oth' >Snippet Stack</Link>
-            <Link target="_blank" rel="noopener noreferrer" to='https://github.com/iamtejas23/webcoodee' className='oth' >Webcoodee</Link>
-            <Link target="_blank" rel="noopener noreferrer" to='https://github.com/iamtejas23/punk' className='oth' >Punk API</Link>
-          </ul>
-          
-          
-          </div>
-        </div>
+        
 
       </div>
     </div>
