@@ -1,17 +1,15 @@
-/* SideNav.css */
 .sidenav {
-  position: absolute;
-  /* top: 0; */
-  /* bottom: 30; */
+  position: fixed;
+  top: 0;
+  left: -250px;
   width: 250px;
-  height: 90%;
+  height: 100%;
   background-color: #1c1b23;
   padding-top: 60px;
-  transition: 0.5s;
+  transition: 0.5s ease;
   z-index: 1;
-  border-radius: 10px;  
+  border-radius: 0 10px 10px 0;
 }
-
 
 .sidenav.open {
   left: 0;
@@ -28,6 +26,11 @@
   background-color: #8b8a912b;
   border-radius: 5px;
   padding: 8px 5px 1px;
+  transition: transform 0.3s ease;
+}
+
+.toggle-btn.open {
+  transform: rotate(180deg);
 }
 
 nav {
@@ -40,10 +43,8 @@ nav {
   align-items: center;
   padding: 1.5rem;
   color: #8B8A91;
-  
+  transition: background-color 0.3s ease;
 }
-
-
 
 .sidebar-item:hover {
   background-color: #ffffff52;
@@ -52,15 +53,19 @@ nav {
 
 .sidebar-item span {
   margin-left: 10px;
-  
 }
 
-.sidebar-item span a{
+.sidebar-item span a {
   text-decoration: none;
   color: #8B8A91;
+  transition: color 0.3s ease;
 }
 
-.social-icons h2{
+.sidebar-item span a:hover {
+  color: #ffffff;
+}
+
+.social-icons h2 {
   color: whitesmoke;
 }
 
@@ -76,72 +81,45 @@ nav {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #8B8A91; /* Default color for the text */
-  margin-bottom: 10px; /* Adjust the margin between icons */
-  transition: color 0.3s; /* Add a smooth color transition */
+  color: #8B8A91;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
   font-size: 1rem;
-  
 }
 
 .social-icons a:hover {
-  color: #ffffff; /* Change color on hover */
+  color: #ffffff;
 }
 
 .ic {
-  margin-right: 12px; /* Adjust the spacing between icon and text */
+  margin-right: 12px;
   font-size: 16px;
-  
 }
 
 /* Responsive Styles */
-@media (max-width: 600px) {
-  .social-icons {
-    flex-direction: column; /* Change to row layout on smaller screens */
-  }
-
-  .social-icons a {
-    margin-right: 10px; /* Adjust the margin between icons in row layout */
-    margin-bottom: 0; /* Remove margin in row layout */
-  }
-}
-
-
-/* Responsive CSS */
 @media (max-width: 768px) {
   .sidenav {
-    width: 100%;
-    left: -100%; /* Initially hidden on small screens */
-
-  }
-
-
-  .toggle-btn {
-    position: fixed;
-    top: 20px;
-    left: 10px;
-    cursor: pointer;
-    z-index: 2;
-    font-size: 24px;
-    color: #ffffff;
-    /* display: none;
-    margin-bottom: 20px; */
+    width: 80%;
+    left: -80%;
   }
 
   .sidenav.open {
     left: 0;
   }
+
+  .toggle-btn {
+    display: block;
+  }
 }
 
+@media (min-width: 769px) {
+  .sidenav {
+    left: 0;
+    width: 250px;
+    border-radius: 0;
+  }
 
-@media (min-width: 768px) {
   .toggle-btn {
-    position: fixed;
-    top: 20px;
-    left: 15px;
-    cursor: pointer;
-    z-index: 2;
-    font-size: 24px;
-    color: #000000;
     display: none;
   }
 }

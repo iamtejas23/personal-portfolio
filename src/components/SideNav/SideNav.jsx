@@ -1,4 +1,3 @@
-// SideNav.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome, FaInfoCircle, FaEnvelope, FaTwitter, FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -13,14 +12,14 @@ const SideNav = () => {
 
   return (
     <div>
-      <div className={`toggle-btn`} onClick={toggleMenu}>
+      <div className={`toggle-btn ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
         {isMenuOpen ? <FaTimes /> : <FaBars />}
       </div>
 
       <div className={`sidenav ${isMenuOpen ? 'open' : ''}`}>
         <nav>
           <div className="sidebar-item">
-            <FaHome size={24}  />
+            <FaHome size={24} />
             <span><Link to="/">Home</Link></span>
           </div>
           <div className="sidebar-item">
@@ -36,13 +35,13 @@ const SideNav = () => {
         <div className="social-icons">
           <h2>Socials</h2>
           <a href="https://github.com/iamtejas23" target="_blank" rel="noopener noreferrer">
-            <FaGithub  size={24} className='ic'  /> Github
+            <FaGithub size={24} className='ic' /> Github
           </a>
           <a href="https://twitter.com/IamTejas23" target="_blank" rel="noopener noreferrer">
-            <FaTwitter  size={24}  className='ic'  /> Twitter
+            <FaTwitter size={24} className='ic' /> Twitter
           </a>
-          <a href="https://www.linkedin.com/in/tejas-mane-9621221b4/" ta rget="_blank" rel="noopener noreferrer">
-            <FaLinkedin  size={24} className='ic'  /> LinkedIn
+          <a href="https://www.linkedin.com/in/tejas-mane-9621221b4/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={24} className='ic' /> LinkedIn
           </a>
         </div>
       </div>
