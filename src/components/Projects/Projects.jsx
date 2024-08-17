@@ -11,6 +11,7 @@ import pro4 from '../../assets/4.png';
 import dev1 from '../../assets/netflix.gif';
 import dev2 from '../../assets/docker.gif';
 import dev3 from '../../assets/argo.gif';
+import dev4 from '../../assets/Terraform.gif';
 
 const projectsData = [
   {
@@ -34,6 +35,12 @@ const projectsData = [
     image: dev3,
     link: 'https://www.linkedin.com/posts/iamtejas23_gitops-argocd-kops-activity-7222513866822344705-8SO-?utm_source=share&utm_medium=member_desktop',
   },
+  {
+    id: 8,
+    name: 'Terraform Project',
+    description: 'Three-tier architecture on AWS, Infrastructure as Code (IaC)',
+    image: dev4,
+    link: 'https://www.linkedin.com/posts/iamtejas23_devops-terraform-infrastructureascode-activity-7228700736308600832-z8TB?utm_source=share&utm_medium=member_desktop',},
   
   // Add more projects as needed
   {
