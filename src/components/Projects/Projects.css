@@ -5,7 +5,7 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   margin: 20px;
-  background: linear-gradient(to right, #2e2e2e20, #383838); /* Dark gradient background */
+  background-color: #2e2e2e20;
   padding: 30px; /* Add some padding */
   border-radius: 20px; /* Round the corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
