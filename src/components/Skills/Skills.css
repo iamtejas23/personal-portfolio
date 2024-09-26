@@ -1,78 +1,75 @@
+/* Skills.css */
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 1.3rem;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 1.3rem;
+}
 
-  .skillbase h2{
-    color: #ccc;
-    margin-left: 30px;
-    /* margin-top: 20px; */
-  }
-  
-  .skills-card h3{
-    color: #ccc;
+.skillbase h2 {
+  color: #ccc;
+  margin-left: 30px;
+}
+
+.skills-card h3 {
+  color: #61dafb;
+  margin-bottom: 15px;
+}
+
+.skills-card {
+  background-color: #1c1b23;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skills-card:hover {
+  transform: translateY(-10px);
+}
+
+.skills-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-card li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  color: #ccc;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.skills-card li svg {
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  color: #61dafb;
+}
+
+.skills-card li:hover svg {
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
   }
 
   .skills-card {
-    /* border: 1px solid #ccc; */
-    background-color: #1c1b2326;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: rgb(121, 116, 116);
+    padding: 15px;
   }
 
-  .skills-card .otherskills .oth {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    margin-bottom: 15px;
-    margin-left: 5px;
-    background-color: transparent;
-    padding: 0.7rem;
-    /* background-color: #35343a; */
-    /* border: 1px solid; */
-    border-radius: 10px;
-    border: dotted ;
-    transition: transform 0.3s ease;
+  .skills-card h3 {
+    font-size: 1.2rem;
   }
 
-  .oth{
-    text-decoration: none;
-    color: #ffffff;
-    text-align: center;
-    border-left: 1px solid #ffffff;
-    border-right: 1px solid #ffffff;
-  }
-
-  .oth:hover{
-    transform: translateY(-5px);
-  }
-  
-  /* Add additional styling as needed */
-  
-  /* Skills.css */
-
-/* Add this styling to customize the bullets */
-.skills-card ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
   .skills-card li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 8px;
+    font-size: 1rem;
   }
-  
-  .skills-card li::before {
-    content: '•'; /* Use any Unicode character or image for the bullet */
-    position: absolute;
-    left: 0;
-    color: #848484; /* Customize the color of the bullet */
-    font-size: 1.2em;
-    margin-right: 8px; /* Adjust spacing between bullet and text */
-  }
-  
+}
