@@ -1,58 +1,54 @@
-/* src/Projects.css */
-
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   margin: 20px;
   background-color: #2e2e2e20;
-  padding: 30px; /* Add some padding */
-  border-radius: 20px; /* Round the corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .projects-container a {
   text-decoration: none;
-  color: #ffffff; /* White text */
+  color: #ffffff;
 }
 
-.proj h2 {
+.proj h6 {
   margin-left: 25px;
   color: #ccc;
-  font-family: 'Roboto', sans-serif; /* Futuristic font */
+  font-family: 'Roboto', sans-serif;
 }
 
 .project-card {
-  padding: 20px;
-  background-color: #232323; /* Dark background */
+  padding: 12px;
+  background-color: #232323;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s ease;
-  position: relative; /* Position for pseudo-elements */
-  overflow: hidden; /* Hide overflowing content */
+  position: relative;
+  overflow: hidden;
 }
 
-.project-card p{
-  color: #ccc; /* White text */
-  
+.project-card p {
+  color: #ccc;
 }
 
 .project-card:hover {
-  transform: translateY(-5px) scale(1.02); /* Scale on hover for depth */
+  transform: translateY(-5px) scale(1.02);
 }
 
 .project-card img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  transition: transform 0.3s ease; /* Transition for image */
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover img {
-  transform: scale(1.1); /* Scale image on hover */
+  transform: scale(1.1);
 }
 
-/* Pseudo-element for overlay */
 .project-card::before {
   content: '';
   position: absolute;
@@ -60,17 +56,30 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  background: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transition: opacity 0.3s ease; /* Transition for overlay */
+  transition: opacity 0.3s ease;
 }
 
 .project-card:hover::before {
-  opacity: 1; /* Show overlay on hover */
+  opacity: 1;
 }
 
+/* Technology icons styling */
+.tech-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tech-icons span {
+  font-size: 1.5rem;
+  color: #61dafb; /* React Icon color */
+}
+
+/* Responsive for smaller screens */
 @media (max-width: 768px) {
   .projects-container {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }

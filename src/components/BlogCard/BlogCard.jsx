@@ -1,32 +1,30 @@
 import React from 'react';
+import { FaEthereum } from 'react-icons/fa'; // Importing icons
+import { SiWeb3Dotjs, SiHiveBlockchain, SiBitcoincash  } from 'react-icons/si'; // Importing Web3 and DEFI icons
 import './BlogCard.css';
-import blockchain from '../../assets/blockchain.png';
-import web3 from '../../assets/web3.png';
-import defi from '../../assets/defi.png';
-import ethereum from '../../assets/ethereum.png';
 
 const BlogCard = () => {
   const blogData = [
     {
-      image: blockchain,
+      icon: <SiBitcoincash  size={50} color="#f5f5f5" />, // Blockchain icon
       name: 'Blockchain',
       description: 'Blockchain Blog.',
       link: 'url_to_blog_1',
     },
     {
-      image: web3,
+      icon: <SiWeb3Dotjs size={50} color="#f5f5f5" />, // WEB 3 icon
       name: 'WEB 3',
       description: 'WEB 3 Blog.',
       link: 'url_to_blog_2',
     },
     {
-      image: defi,
+      icon: <SiHiveBlockchain  size={50} color="#f5f5f5" />, // DEFI icon
       name: 'DEFI',
       description: 'DEFI Blog.',
       link: 'url_to_blog_3',
     },
     {
-      image: ethereum,
+      icon: <FaEthereum size={50} color="#f5f5f5" />, // Ethereum icon
       name: 'Ethereum',
       description: 'Ethereum Blog.',
       link: 'url_to_blog_4',
@@ -35,11 +33,11 @@ const BlogCard = () => {
 
   return (
     <div className="BlogCard-app">
-      <h2>Explore Latest Blogs</h2>
+      <h2>Blogs</h2>
       <div className="app-blog">
         {blogData.map((blog, index) => (
           <div className="blog-card" key={index}>
-            <img src={blog.image} alt={blog.name} className="card-image" />
+            <div className="icon-container">{blog.icon}</div> {/* Updated to use icons */}
             <div className="card-content">
               <h3 className="card-name">{blog.name}</h3>
               <p className="card-description">{blog.description}</p>
