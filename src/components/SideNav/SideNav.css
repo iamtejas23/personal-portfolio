@@ -9,7 +9,6 @@
   transition: 0.3s ease-in-out;
   z-index: 100;
   border-radius: 0 10px 10px 0;
-  
   overflow-y: auto;
 }
 
@@ -45,6 +44,7 @@ nav {
 .sidebar-item {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   padding: 15px 15px;
   color: #8B8A91;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -72,11 +72,12 @@ nav {
   color: #ffffff;
 }
 
+/* Updated social icons for better alignment */
 .social-icons {
   padding: 15px 15px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .social-icons h2 {
@@ -90,9 +91,10 @@ nav {
 .social-icons a {
   display: flex;
   align-items: center;
+  gap: 10px;
   color: #8B8A91;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
@@ -101,8 +103,7 @@ nav {
 }
 
 .ic {
-  margin-right: 10px;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 /* Responsive Styles */
@@ -123,7 +124,12 @@ nav {
   .social-icons {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+  }
+
+  .social-icons a {
+    flex-basis: 45%;
+    justify-content: center;
   }
 }
 
@@ -136,5 +142,10 @@ nav {
 
   .toggle-btn {
     display: none;
+  }
+
+  .social-icons {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

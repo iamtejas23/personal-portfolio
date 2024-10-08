@@ -40,7 +40,7 @@ const SideNav = () => {
           <a href="https://twitter.com/IamTejas23" target="_blank" rel="noopener noreferrer">
             <FaTwitter size={24} className='ic' /> Twitter
           </a>
-          <a href="https://www.linkedin.com/in/tejas-mane-9621221b4/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/iamtejas23/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={24} className='ic' /> LinkedIn
           </a>
         </div>

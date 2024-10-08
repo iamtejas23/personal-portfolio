@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaReact, FaDocker, FaAws, FaJenkins , FaGithub } from 'react-icons/fa'; // Importing icons
+import { FaReact, FaDocker, FaAws, FaJenkins, FaGithub } from 'react-icons/fa'; // Importing icons
 import './Projects.css';
-import { SiTerraform, SiAnsible, SiApachetomcat, SiApachemaven, SiArgo, SiNextdotjs    } from "react-icons/si";
-import { BiLogoKubernetes } from "react-icons/bi";
+import { SiTerraform, SiAnsible, SiApachetomcat, SiApachemaven, SiArgo, SiNextdotjs } from 'react-icons/si';
+import { BiLogoKubernetes } from 'react-icons/bi';
 
 // Import your project images
 import pro1 from '../../assets/1.png';
@@ -22,7 +22,14 @@ const projectsData = [
     description: 'Automating the CI/CD pipeline for my applications.',
     image: dev1,
     link: 'https://www.linkedin.com/posts/iamtejas23_netflixtech-devops-cicd-activity-7214626995161210880-VJFQ?utm_source=share&utm_medium=member_desktop',
-    techIcons: [<FaAws />, <FaJenkins/>, <SiAnsible />, <FaGithub />, <SiApachetomcat />, <SiApachemaven />], // Icons for technologies used
+    techIcons: [
+      <FaAws style={{ color: '#FF9900' }} />,
+      <FaJenkins style={{ color: '#D24939' }} />,
+      <SiAnsible style={{ color: '#EE0000' }} />,
+      <FaGithub style={{ color: '#fff' }} />,
+      <SiApachetomcat style={{ color: '#F8DC75' }} />,
+      <SiApachemaven style={{ color: '#C71A36' }} />,
+    ],
   },
   {
     id: 6,
@@ -30,7 +37,12 @@ const projectsData = [
     description: 'An automated CI/CD pipeline for Dockerized applications!',
     image: dev2,
     link: 'https://www.linkedin.com/posts/iamtejas23_devops-cicd-docker-activity-7217474136330162176-RbDP?utm_source=share&utm_medium=member_desktop',
-    techIcons: [<FaAws />, <FaJenkins/>, <FaGithub />,<FaDocker />],
+    techIcons: [
+      <FaAws style={{ color: '#FF9900' }} />,
+      <FaJenkins style={{ color: '#D24939' }} />,
+      <FaGithub style={{ color: '#fff' }} />,
+      <FaDocker style={{ color: '#0db7ed' }} />,
+    ],
   },
   {
     id: 7,
@@ -38,7 +50,12 @@ const projectsData = [
     description: 'DevOps project leveraging ArgoCD and kOps on AWS!',
     image: dev3,
     link: 'https://www.linkedin.com/posts/iamtejas23_gitops-argocd-kops-activity-7222513866822344705-8SO-?utm_source=share&utm_medium=member_desktop',
-    techIcons: [<FaAws />, <FaGithub />, <SiArgo />, <BiLogoKubernetes />],
+    techIcons: [
+      <FaAws style={{ color: '#FF9900' }} />,
+      <FaGithub style={{ color: '#fff' }} />,
+      <SiArgo style={{ color: '#d16026' }} />,
+      <BiLogoKubernetes style={{ color: '#326ce5' }} />,
+    ],
   },
   {
     id: 8,
@@ -46,7 +63,12 @@ const projectsData = [
     description: 'Three-tier architecture on AWS, Infrastructure as Code (IaC)',
     image: dev4,
     link: 'https://www.linkedin.com/posts/iamtejas23_devops-terraform-infrastructureascode-activity-7228700736308600832-z8TB?utm_source=share&utm_medium=member_desktop',
-    techIcons: [<FaAws />, <FaGithub />, <FaJenkins/>, <SiTerraform />],
+    techIcons: [
+      <FaAws style={{ color: '#FF9900' }} />,
+      <FaGithub style={{ color: '#fff' }} />,
+      <FaJenkins style={{ color: '#D24939' }} />,
+      <SiTerraform style={{ color: '#5C4EE5' }} />,
+    ],
   },
   {
     id: 1,
@@ -54,7 +76,10 @@ const projectsData = [
     description: 'Crafting an Airbnb clone in Next.js',
     image: pro1,
     link: 'https://github.com/iamtejas23/air-bnb-clone',
-    techIcons: [<SiNextdotjs />, <FaGithub />],
+    techIcons: [
+      <SiNextdotjs style={{ color: '#fff' }} />,
+      <FaGithub style={{ color: '#fff' }} />,
+    ],
   },
   {
     id: 2,
@@ -62,7 +87,10 @@ const projectsData = [
     description: 'React Native Security App.',
     image: pro2,
     link: 'https://github.com/iamtejas23/thunder',
-    techIcons: [<FaReact />, <FaGithub />],
+    techIcons: [
+      <FaReact style={{ color: '#61DAFB' }} />,
+      <FaGithub style={{ color: '#fff' }} />,
+    ],
   },
   {
     id: 3,
@@ -70,7 +98,10 @@ const projectsData = [
     description: 'Zomato clone in React.js',
     image: pro3,
     link: 'https://github.com/iamtejas23/react-zomato-clone',
-    techIcons: [<FaReact />, <FaGithub />],
+    techIcons: [
+      <FaReact style={{ color: '#61DAFB' }} />,
+      <FaGithub style={{ color: '#fff' }} />,
+    ],
   },
   {
     id: 4,
@@ -78,7 +109,10 @@ const projectsData = [
     description: 'React.js WebApp dashboard UI.',
     image: pro4,
     link: 'https://github.com/iamtejas23/rapidquest',
-    techIcons: [<FaReact />, <FaGithub />],
+    techIcons: [
+      <FaReact style={{ color: '#61DAFB' }} />,
+      <FaGithub style={{ color: '#fff' }} />,
+    ],
   },
 ];
 
