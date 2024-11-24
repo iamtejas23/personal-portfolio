@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className="about-container">
       <div className="intro">
-        <h2>About Me</h2>
+        <h2>About Me V1</h2>
         <p>
           I am a passionate DevOps Engineer with a deep interest in automation, cloud technologies, and container orchestration.
           My focus is on building scalable, reliable, and efficient systems using modern DevOps tools and practices.
