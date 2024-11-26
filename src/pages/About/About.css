@@ -1,5 +1,5 @@
 .about-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: auto;
   padding: 4rem;
   background-color: #1d1e1e;
@@ -8,10 +8,9 @@
   margin-top: 2rem;
 }
 
-.about-container h3{
+.about-container h3 {
   color: #61dafb;
   margin-bottom: 1.5rem;
-  
 }
 
 .intro h2 {
@@ -46,27 +45,40 @@
   align-items: center;
 }
 
+.aws { color: #FF9900; }
+.docker { color: #2496ED; }
+.k8s { color: #326CE5; }
+.terraform { color: #623CE4; }
+.prometheus { color: #E6522C; }
+.grafana { color: #F46800; }
+.azure { color: #0089D6; }
+.react { color: #61dafb; }
+.nodejs { color: #8CC84B; }
+.javascript { color: #F0DB4F; }
+.jenkins { color: #D24939; }
+.cloudecomputing { color: #F0DB4F; }
+.github { color: #181717; }
+
 .skill-item svg {
   margin-right: 8px;
 }
 
-.education-item {
+.project-item, .education-item {
   border-bottom: 2px solid #61dafb;
   padding-bottom: 15px;
   margin-bottom: 20px;
 }
 
-.education-item h4 {
+.project-item h4, .education-item h4 {
   color: #ccc;
   font-size: 1.5rem;
 }
 
-.education-item p {
+.project-item p, .education-item p {
   color: #999;
   font-size: 1.1rem;
 }
 
-/* Media query for responsiveness */
 @media only screen and (max-width: 600px) {
   .about-container {
     padding: 1.5rem;
