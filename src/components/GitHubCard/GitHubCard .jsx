@@ -11,7 +11,7 @@ const GitHubCard = () => {
        <p> Frontend Devloper / Devops Engineer</p> </span>
       </div>
       <a
-        href="https://github.com/your-username"
+        href="https://github.com/iamtejas23"
         target="_blank"
         rel="noopener noreferrer"
         className="github-follow-button"

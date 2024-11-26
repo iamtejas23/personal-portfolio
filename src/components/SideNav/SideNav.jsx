@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaInfoCircle, FaEnvelope, FaTwitter, FaBars, FaTimes, FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaEnvelope, FaTwitter, FaBars, FaTimes, FaGithub, FaLinkedin, FaFileAlt, FaInstagram  } from 'react-icons/fa';
 import './SideNav.css';
 
 const SideNav = () => {
@@ -36,8 +36,10 @@ const SideNav = () => {
           </div>
         </nav>
 
+        <div className="speco">
+        <h2>Socials</h2>
         <div className="social-icons">
-          <h2>Socials</h2>
+          
           <a href="https://github.com/iamtejas23" target="_blank" rel="noopener noreferrer">
             <FaGithub size={24} color="#ffffff" className='ic' /> Github
           </a>
@@ -47,6 +49,10 @@ const SideNav = () => {
           <a href="https://www.linkedin.com/in/iamtejas23/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={24} color="#0077B5" className='ic' /> LinkedIn
           </a>
+          <a href="https://www.instagram.com/iamtejas23/" target="_blank" rel="noopener noreferrer">
+            <FaInstagram size={24} color="#E4405F" className='ic' /> Instagram
+          </a>
+        </div>
         </div>
       </div>
     </div>
