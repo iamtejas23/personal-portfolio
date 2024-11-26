@@ -1,3 +1,4 @@
+/* General Styles */
 .sidenav {
   position: fixed;
   top: 0;
@@ -6,7 +7,7 @@
   height: 100%;
   background-color: #1c1b23;
   padding-top: 60px;
-  transition: 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
   z-index: 100;
   border-radius: 0 10px 10px 0;
   overflow-y: auto;
@@ -44,8 +45,7 @@ nav {
 .sidebar-item {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 15px 15px;
+  padding: 15px 5px;
   color: #8B8A91;
   transition: background-color 0.3s ease, color 0.3s ease;
   border-bottom: 1px solid #2c2b34;
@@ -72,9 +72,10 @@ nav {
   color: #ffffff;
 }
 
-/* Updated social icons for better alignment */
+/* Social Icons */
 .social-icons {
-  padding: 15px 15px;
+  margin-top: 20px;
+  padding: 0px 30px;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -117,10 +118,6 @@ nav {
     left: 0;
   }
 
-  .toggle-btn {
-    display: block;
-  }
-
   .social-icons {
     flex-direction: row;
     flex-wrap: wrap;
@@ -147,5 +144,20 @@ nav {
   .social-icons {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* Adjustments for Extra Small Devices */
+@media (max-width: 480px) {
+  .sidebar-item span {
+    font-size: 1rem;
+  }
+
+  .social-icons a {
+    font-size: 0.9rem;
+  }
+
+  .ic {
+    font-size: 20px;
   }
 }
