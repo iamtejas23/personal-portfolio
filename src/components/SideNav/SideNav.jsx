@@ -31,6 +31,10 @@ const SideNav = () => {
             <span><Link to="/contact">Contact</Link></span>
           </div>
           <div className="sidebar-item">
+            <FaEnvelope size={24}  />
+            <span><Link to="/blogs">Blogs</Link></span>
+          </div>
+          <div className="sidebar-item">
             <FaFileAlt size={24}  />
             <span><Link target="_blank" rel="noopener noreferrer" to="https://drive.google.com/file/d/1VlRHnxyNPguibvLkLQ6kd8_TM0nmz6XO/view?usp=sharing">Resume</Link></span>
           </div>

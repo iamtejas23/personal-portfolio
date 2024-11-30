@@ -5,6 +5,8 @@ import SideNav from './components/SideNav/SideNav';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import BlogCard from './components/BlogCard/BlogCard';
+
 
 const App = () => {
   return (
@@ -16,6 +18,7 @@ const App = () => {
           <Route path="/" exact element={<Home/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/contact" element={<Contact/>} />
+          <Route path="/blogs" element={<BlogCard/>} />
         </Routes>
       </div>
     </Router>
