@@ -36,7 +36,7 @@ const SideNav = () => {
           </div>
           <div className="sidebar-item">
             <FaFileAlt size={24}  />
-            <span><Link target="_blank" rel="noopener noreferrer" to="https://drive.google.com/file/d/1VlRHnxyNPguibvLkLQ6kd8_TM0nmz6XO/view?usp=sharing">Resume</Link></span>
+            <span><Link target="_blank" rel="noopener noreferrer" to="http://drive.google.com/file/d/1NwROYwW9BgRiA3XJCFF1f3rw1hDToBvo/view?usp=sharing">Resume</Link></span>
           </div>
         </nav>
 
