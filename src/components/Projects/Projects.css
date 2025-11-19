@@ -1,54 +1,58 @@
+/* MAIN GRID – ALWAYS 4 PROJECTS PER ROW ON DESKTOP */
 .projects-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
   margin: 20px;
   background-color: #2e2e2e20;
-  padding: 10px;
+  padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
 }
 
+/* LINK STYLING */
 .projects-container a {
   text-decoration: none;
   color: #ffffff;
 }
 
+/* TITLE */
 .proj h6 {
   margin-left: 25px;
   color: #ccc;
   font-family: 'Roboto', sans-serif;
 }
 
+/* PROJECT CARD */
 .project-card {
   padding: 12px;
   background-color: #232323;
-  border-radius: 10px;
+  border-radius: 14px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   position: relative;
   overflow: hidden;
-}
-
-.project-card p {
-  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .project-card:hover {
-  transform: translateY(-5px) scale(1.02);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
+/* PROJECT IMAGE – SIZE NOT CHANGED */
 .project-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.35s ease;
 }
 
 .project-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.07);
 }
 
+/* DARK OVERLAY */
 .project-card::before {
   content: '';
   position: absolute;
@@ -56,30 +60,103 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.55));
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
 }
 
 .project-card:hover::before {
   opacity: 1;
 }
 
-/* Technology icons styling */
-.tech-icons {
-  display: flex;
-  gap: 10px;
+/* CONTENT */
+.prodisk {
   margin-top: 10px;
 }
 
-.tech-icons span {
-  font-size: 1.5rem;
-  color: #61dafb; /* React Icon color */
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 768px) {
+.project-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* TECH ICONS */
+.tech-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.tech-icons span {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.tech-icons span:hover {
+  transform: scale(1.15);
+}
+
+/* ------------------------
+   RESPONSIVE BREAKPOINTS
+   ------------------------ */
+
+/* TABLETS (2 PROJECTS PER ROW) */
+@media (max-width: 992px) {
   .projects-container {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .tech-icons span {
+    font-size: 1.4rem;
+  }
+}
+
+/* MOBILE (1 PROJECT PER ROW) */
+@media (max-width: 600px) {
+  .projects-container {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .project-card {
+    padding: 10px;
+  }
+
+  .project-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 400px) {
+  .project-card {
+    padding: 8px;
+  }
+
+  .project-card h3 {
+    font-size: 1rem;
+  }
+
+  .tech-icons span {
+    font-size: 1.3rem;
   }
 }
