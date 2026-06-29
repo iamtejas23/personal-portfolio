@@ -10,7 +10,7 @@ const useSEO = ({ title, description, canonical, ogType = 'website', ogImage }) 
   useEffect(() => {
     const fullTitle = title
       ? `${title} | Tejas Mane`
-      : 'Tejas Mane | DevOps Engineer & Cloud Infrastructure Expert — Kolhapur, India';
+      : 'Tejas Mane | DevOps Engineer — AWS, Kubernetes & Cloud Expert';
     const fullCanonical = canonical ? `${BASE_URL}${canonical}` : BASE_URL;
     const image = ogImage || `${BASE_URL}/tejas-mane.jpg`;
 
