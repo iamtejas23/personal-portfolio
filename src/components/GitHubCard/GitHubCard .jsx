@@ -2,55 +2,97 @@ import React, { useState } from 'react';
 import './GitHubCard.css';
 import logo from '../../assets/me.jpg';
 import resume from '../../assets/TejasManeResume.pdf';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaTimes, FaFileAlt } from 'react-icons/fa';
 
 const GitHubCard = () => {
   const [openPopup, setOpenPopup] = useState(false);
 
   return (
     <>
-      <div className="github-card">
+      <div className="profile-card">
 
-        {/* LEFT SECTION EXACT LIKE YOUR FIRST DESIGN */}
-        <div className="left-container">
-
-          <div className="profile-column">
+        {/* Left — avatar + identity */}
+        <div className="profile-card-left">
+          <div
+            className="avatar-wrap"
+            onClick={() => setOpenPopup(true)}
+            onKeyDown={e => e.key === 'Enter' && setOpenPopup(true)}
+            role="button"
+            tabIndex={0}
+            aria-label="View Tejas Mane's resume"
+          >
             <img
               src={logo}
-              alt="Profile"
-              className="github-logo"
-              onClick={() => setOpenPopup(true)}
+              alt="Tejas Mane — DevOps Engineer and Frontend Developer from Kolhapur, India"
+              className="avatar-img"
+              width="84"
+              height="84"
+              fetchpriority="high"
             />
-            <small className="click-here">Click profile to view resume</small>
+            <span className="avatar-overlay" aria-hidden="true">Resume</span>
           </div>
 
-          <div className="name-column">
-            <h2 className="name-title">TEJAS MANE</h2>
-            <p className="role-title">DEVOPS ENGINEER / FRONTEND DEVELOPER</p>
+          <div className="profile-meta">
+            <h1 className="profile-name">TEJAS MANE</h1>
+            <p className="profile-role">DevOps Engineer &amp; Frontend Developer</p>
+            <div className="profile-badges">
+              <span className="badge badge-green">
+                <span className="badge-pulse" aria-hidden="true" />
+                Available for opportunities
+              </span>
+              <span className="badge badge-neutral">📍 Kolhapur, India</span>
+            </div>
           </div>
-
         </div>
 
-        {/* RIGHT SIDE BUTTON */}
-        <a
-          href="https://github.com/iamtejas23"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="github-follow-button"
-        >
-          <FaGithub size={24} /> Follow on GitHub
-        </a>
+        {/* Right — CTAs */}
+        <div className="profile-card-actions">
+          <a
+            href="https://github.com/iamtejas23"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-github"
+          >
+            <FaGithub aria-hidden="true" />
+            Follow on GitHub
+          </a>
+          <button
+            className="btn-resume-cta"
+            onClick={() => setOpenPopup(true)}
+            aria-label="View Tejas Mane's resume"
+          >
+            <FaFileAlt aria-hidden="true" />
+            View Resume
+          </button>
+        </div>
 
       </div>
 
-      {/* POPUP */}
+      {/* Resume popup */}
       {openPopup && (
-        <div className="resume-popup-overlay" onClick={() => setOpenPopup(false)}>
-          <div className="resume-popup" onClick={(e) => e.stopPropagation()}>
-            <div className="popup-top">
-              <button className="close-btn" onClick={() => setOpenPopup(false)}>Close</button>
+        <div
+          className="resume-overlay"
+          onClick={() => setOpenPopup(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Resume viewer"
+        >
+          <div className="resume-modal" onClick={e => e.stopPropagation()}>
+            <div className="resume-modal-header">
+              <span>Tejas Mane — Resume</span>
+              <button
+                className="btn-close-modal"
+                onClick={() => setOpenPopup(false)}
+                aria-label="Close resume"
+              >
+                <FaTimes aria-hidden="true" />
+              </button>
             </div>
-            <iframe src={resume} className="resume-frame" title="resume"></iframe>
+            <iframe
+              src={resume}
+              className="resume-iframe"
+              title="Tejas Mane Resume"
+            />
           </div>
         </div>
       )}

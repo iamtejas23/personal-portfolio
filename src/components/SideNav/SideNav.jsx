@@ -1,65 +1,114 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaHome, FaInfoCircle, FaEnvelope, FaTwitter, FaBars, FaTimes, FaGithub, FaLinkedin, FaFileAlt, FaInstagram  } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import {
+  FaHome, FaInfoCircle, FaEnvelope, FaBars, FaTimes,
+  FaGithub, FaLinkedin, FaFileAlt, FaInstagram, FaTwitter, FaNewspaper,
+} from 'react-icons/fa';
 import './SideNav.css';
 
-const SideNav = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+const NAV_ITEMS = [
+  { to: '/',        icon: FaHome,        label: 'Home'    },
+  { to: '/about',   icon: FaInfoCircle,  label: 'About'   },
+  { to: '/contact', icon: FaEnvelope,    label: 'Contact' },
+  { to: '/blogs',   icon: FaNewspaper,   label: 'Blogs'   },
+];
 
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
+const SOCIALS = [
+  { href: 'https://github.com/iamtejas23',           icon: FaGithub,    label: 'GitHub',    color: '#e2e2e2'  },
+  { href: 'https://twitter.com/IamTejas23',          icon: FaTwitter,   label: 'Twitter',   color: '#1DA1F2'  },
+  { href: 'https://www.linkedin.com/in/iamtejas23/', icon: FaLinkedin,  label: 'LinkedIn',  color: '#0A66C2'  },
+  { href: 'https://www.instagram.com/iamtejas23/',   icon: FaInstagram, label: 'Instagram', color: '#E4405F'  },
+];
+
+const SideNav = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  // Close drawer when navigating
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  // Lock body scroll while mobile drawer is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
 
   return (
-    <div>
-      <div className={`toggle-btn ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        {isMenuOpen ? <FaTimes /> : <FaBars />}
-      </div>
+    <>
+      {/* Hamburger toggle */}
+      <button
+        className={`nav-toggle${isOpen ? ' open' : ''}`}
+        onClick={() => setIsOpen(v => !v)}
+        aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
+        aria-expanded={isOpen}
+        aria-controls="sidenav"
+      >
+        {isOpen ? <FaTimes aria-hidden="true" /> : <FaBars aria-hidden="true" />}
+      </button>
 
-      <div className={`sidenav ${isMenuOpen ? 'open' : ''}`}>
-        <nav>
-          <div className="sidebar-item">
-            <FaHome size={24}  />
-            <span><Link to="/">Home</Link></span>
-          </div>
-          <div className="sidebar-item">
-            <FaInfoCircle size={24}  />
-            <span><Link to="/about">About</Link></span>
-          </div>
-          <div className="sidebar-item">
-            <FaEnvelope size={24}  />
-            <span><Link to="/contact">Contact</Link></span>
-          </div>
-          <div className="sidebar-item">
-            <FaEnvelope size={24}  />
-            <span><Link to="/blogs">Blogs</Link></span>
-          </div>
-          <div className="sidebar-item">
-            <FaFileAlt size={24}  />
-            <span><Link target="_blank" rel="noopener noreferrer" to="http://drive.google.com/file/d/1NwROYwW9BgRiA3XJCFF1f3rw1hDToBvo/view?usp=sharing">Resume</Link></span>
-          </div>
+      {/* Dark backdrop (mobile only) */}
+      {isOpen && (
+        <div
+          className="nav-overlay"
+          onClick={() => setIsOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside id="sidenav" className={`sidenav${isOpen ? ' open' : ''}`}>
+
+        <div className="nav-brand">
+          <div className="brand-logo" aria-hidden="true">TM</div>
+          <span className="brand-label">Portfolio</span>
+        </div>
+
+        <nav className="nav-links" aria-label="Main navigation">
+          {NAV_ITEMS.map(({ to, icon: Icon, label }) => (
+            <Link
+              key={to}
+              to={to}
+              className={`nav-item${location.pathname === to ? ' active' : ''}`}
+              aria-current={location.pathname === to ? 'page' : undefined}
+            >
+              <Icon className="nav-icon" aria-hidden="true" />
+              <span>{label}</span>
+            </Link>
+          ))}
+          <a
+            href="https://drive.google.com/file/d/1NwROYwW9BgRiA3XJCFF1f3rw1hDToBvo/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-item"
+          >
+            <FaFileAlt className="nav-icon" aria-hidden="true" />
+            <span>Resume</span>
+          </a>
         </nav>
 
-        <div className="speco">
-        <h2>Socials</h2>
-        <div className="social-icons">
-          
-          <a href="https://github.com/iamtejas23" target="_blank" rel="noopener noreferrer">
-            <FaGithub size={24} color="#ffffff" className='ic' /> Github
-          </a>
-          <a href="https://twitter.com/IamTejas23" target="_blank" rel="noopener noreferrer">
-            <FaTwitter size={24} color="#1DA1F2" className='ic' /> Twitter
-          </a>
-          <a href="https://www.linkedin.com/in/iamtejas23/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={24} color="#0077B5" className='ic' /> LinkedIn
-          </a>
-          <a href="https://www.instagram.com/iamtejas23/" target="_blank" rel="noopener noreferrer">
-            <FaInstagram size={24} color="#E4405F" className='ic' /> Instagram
-          </a>
+        <div className="nav-socials">
+          <span className="socials-label">Connect</span>
+          <div className="socials-list">
+            {SOCIALS.map(({ href, icon: Icon, label, color }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-item"
+                aria-label={label}
+              >
+                <Icon style={{ color }} aria-hidden="true" />
+                <span>{label}</span>
+              </a>
+            ))}
+          </div>
         </div>
-        </div>
-      </div>
-    </div>
+
+      </aside>
+    </>
   );
 };
 

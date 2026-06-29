@@ -1,150 +1,322 @@
-/* MAIN BOX */
-.github-card {
+/* ═══════════════════════════════════════════════
+   Profile / GitHub Card — Black & White
+═══════════════════════════════════════════════ */
+
+.profile-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1c1b23;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  gap: 16px;
+  background: var(--bg-2, #1c1b23);
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: var(--radius-lg, 16px);
+  padding: 20px 24px;
+  transition: box-shadow 250ms ease, border-color 250ms ease;
 }
 
-/* LEFT CONTAINER – IMAGE + NAME SIDE BY SIDE */
-.left-container {
+.profile-card:hover {
+  box-shadow: 0 0 28px rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ── Left container ────────────────────────── */
+.profile-card-left {
   display: flex;
   align-items: center;
-  gap: 1.3rem; /* SPACE BETWEEN IMAGE AND NAME */
+  gap: 20px;
+  min-width: 0;
 }
 
-/* PROFILE IMAGE COLUMN */
-.profile-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* PROFILE IMAGE */
-.github-logo {
-  width: 85px;
-  height: 85px;
+/* ── Avatar ────────────────────────────────── */
+.avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
   border-radius: 50%;
-  border: 2px solid #ffffff40;
-  padding: 5px;
   cursor: pointer;
-  transition: .2s;
+  outline: none;
 }
 
-.github-logo:hover {
-  transform: scale(1.05);
+/* White ring on hover / focus */
+.avatar-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffffff, #888888);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 250ms ease;
 }
 
-/* CLICK TEXT BELOW IMAGE */
-.click-here {
-  font-size: 11px;
-  margin-top: 6px;
-  color: white;
-  opacity: .9;
-  text-align: center;
+.avatar-wrap:hover::before,
+.avatar-wrap:focus-visible::before {
+  opacity: 1;
 }
 
-/* NAME + ROLE COLUMN */
-.name-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left; /* FIXED */
+.avatar-img {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 3px solid var(--bg-2, #1c1b23);
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  transition: transform 250ms var(--ease, cubic-bezier(0.4,0,0.2,1));
+  will-change: transform;
 }
 
-.name-title {
-  margin: 0;
-  font-size: 34px;
-  font-family: "Bungee Spice", sans-serif;
+.avatar-wrap:hover .avatar-img {
+  transform: scale(1.04);
 }
 
-.role-title {
-  margin: 0;
-  margin-top: 3px;
-  font-size: 13px;
-  color: #ccc;
-}
-
-/* FOLLOW BUTTON */
-.github-follow-button {
+/* "Resume" text overlay on avatar */
+.avatar-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 150ms ease;
+  z-index: 2;
+  text-transform: uppercase;
+}
+
+.avatar-wrap:hover .avatar-overlay {
+  opacity: 1;
+}
+
+/* ── Identity ──────────────────────────────── */
+.profile-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.profile-name {
+  font-family: var(--font, 'Inter', sans-serif);
+  font-size: clamp(1.25rem, 3.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.profile-role {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-2, #9a9aaa);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Badges ────────────────────────────────── */
+.profile-badges {
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  background: #000;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: white;
+  margin-top: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.badge-green {
+  background: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.badge-neutral {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-2, #9a9aaa);
+  border: 1px solid var(--border);
+}
+
+/* Pulsing green dot */
+.badge-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: pulse-dot 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(74,222,128,0.5); }
+  50%       { box-shadow: 0 0 0 4px rgba(74,222,128,0); }
+}
+
+/* ── CTA button group ──────────────────────── */
+.profile-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-github,
+.btn-resume-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm, 8px);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease,
+              transform 150ms ease, box-shadow 150ms ease;
+  will-change: transform;
+}
+
+.btn-github {
+  background: #0d0d0d;
+  color: #fff;
   text-decoration: none;
-  transition: .3s;
+  border: 1px solid rgba(255,255,255,0.14);
 }
 
-.github-follow-button:hover {
-  background: #333;
+.btn-github:hover {
+  background: #1e1e1e;
+  border-color: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
 }
 
-/* POPUP */
-.resume-popup-overlay {
+.btn-resume-cta {
+  background: transparent;
+  color: var(--text-1, #efefef);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+.btn-resume-cta:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+/* ═══════════════════════════════════════════════
+   Resume modal
+═══════════════════════════════════════════════ */
+
+.resume-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
+  z-index: 1000;
+  padding: 16px;
+  animation: fadeIn 0.2s ease;
 }
 
-.resume-popup {
-  background: #1c1b23;
-  width: min(900px, 90%);
-  height: min(850px, 85vh);
-  border-radius: 8px;
-  overflow: hidden;
+.resume-modal {
+  background: #111114;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: var(--radius-lg, 16px);
+  width: min(920px, 100%);
+  height: min(88vh, 860px);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  animation: slideUp 0.3s var(--ease, cubic-bezier(0.4,0,0.2,1));
 }
 
-.popup-top {
+.resume-modal-header {
   display: flex;
-  justify-content: flex-end;
-  padding: 8px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-2, #9a9aaa);
+  flex-shrink: 0;
 }
 
-.close-btn {
-  background: #000;
-  color: white;
-  padding: 7px 12px;
-  border-radius: 6px;
-  border: none;
+.btn-close-modal {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-2, #9a9aaa);
+  border-radius: var(--radius-sm, 8px);
+  width: 32px;
+  height: 32px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: background 150ms ease, color 150ms ease;
 }
 
-.resume-frame {
+.btn-close-modal:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.resume-iframe {
+  flex: 1;
   width: 100%;
-  height: 100%;
   border: none;
 }
 
-/* RESPONSIVE */
+/* ── Responsive ────────────────────────────── */
 @media (max-width: 600px) {
-  .github-card {
+  .profile-card {
     flex-direction: column;
-    gap: 1rem;
+    align-items: flex-start;
   }
 
-  .left-container {
-    flex-direction: column;
-    text-align: center;
+  .profile-card-left {
+    width: 100%;
   }
 
-  .name-title {
-    font-size: 24px;
+  .avatar-img {
+    width: 68px;
+    height: 68px;
   }
 
-  .github-follow-button {
-    width: 80%;
+  .profile-role {
+    white-space: normal;
+  }
+
+  .profile-card-actions {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .btn-github,
+  .btn-resume-cta {
+    flex: 1;
     justify-content: center;
   }
 }

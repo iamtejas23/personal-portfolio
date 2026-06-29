@@ -1,13 +1,78 @@
-/* .home{
-    margin-left: 250px;
-} */
+/* ═══════════════════════════════════════════════
+   Home Page
+═══════════════════════════════════════════════ */
 
-.gitcard{
-    padding: 1rem 2rem;
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 24px;
 }
 
-@media (min-width: 768px) {
-    .home{
-        margin-left: 250px;
-    }
+.home-profile {
+  /* wraps GitHubCard — no extra styles needed */
+}
+
+/* Stagger fade-in for each major section */
+.home > * {
+  animation: fadeInUp 0.45s var(--ease, cubic-bezier(0.4,0,0.2,1)) both;
+}
+
+.home > *:nth-child(1) { animation-delay: 0.05s; }
+.home > *:nth-child(2) { animation-delay: 0.10s; }
+.home > *:nth-child(3) { animation-delay: 0.16s; }
+.home > *:nth-child(4) { animation-delay: 0.22s; }
+
+/* ── Intro strip ───────────────────────────── */
+.home-intro {
+  background: var(--bg-2, #1c1b23);
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  border-radius: var(--radius-md, 12px);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.home-intro p {
+  font-size: 0.925rem;
+  color: var(--text-2, #9a9aaa);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.home-intro p strong {
+  color: var(--text-0, #ffffff);
+  font-weight: 600;
+}
+
+.home-intro-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.intro-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border, rgba(255,255,255,0.08));
+  color: var(--text-2, #9a9aaa);
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.intro-tag:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.18);
+  color: var(--text-1, #efefef);
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 16px;
+    gap: 20px;
   }
+}
