@@ -1,11 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './GitHubCard.css';
 import logo from '../../assets/me.jpg';
 import resume from '../../assets/TejasManeResume.pdf';
 import { FaGithub, FaTimes, FaFileAlt } from 'react-icons/fa';
 
+const ROLES = [
+  'DevOps Engineer',
+  'Cloud & Kubernetes',
+  'CI/CD Automation',
+  'Frontend Developer',
+];
+
 const GitHubCard = () => {
   const [openPopup, setOpenPopup] = useState(false);
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRoleIndex((i) => (i + 1) % ROLES.length);
+    }, 2600);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    if (!openPopup) return undefined;
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpenPopup(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [openPopup]);
 
   return (
     <>
@@ -34,7 +58,10 @@ const GitHubCard = () => {
 
           <div className="profile-meta">
             <h1 className="profile-name">TEJAS MANE</h1>
-            <p className="profile-role">DevOps Engineer &amp; Frontend Developer</p>
+            <p className="profile-role">
+              <span className="role-static">DevOps Engineer &amp; Frontend Developer</span>
+              <span key={roleIndex} className="role-rotator" aria-live="polite">{ROLES[roleIndex]}</span>
+            </p>
             <div className="profile-badges">
               <span className="badge badge-green">
                 <span className="badge-pulse" aria-hidden="true" />

@@ -1,7 +1,8 @@
 import React from 'react';
 import './contact.css';
-import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaCopy } from 'react-icons/fa';
 import useSEO from '../../hooks/useSEO';
+import { showToast } from '../../components/Toast/Toast';
 
 const ContactForm = () => {
   useSEO({
@@ -25,6 +26,21 @@ const ContactForm = () => {
             <div className="contact-detail-item">
               <FaEnvelope aria-hidden="true" />
               <a href="mailto:tsmane8787@gmail.com">tsmane8787@gmail.com</a>
+              <button
+                type="button"
+                className="btn-copy-email"
+                onClick={async () => {
+                  try {
+                    await navigator.clipboard.writeText('tsmane8787@gmail.com');
+                    showToast('Email copied');
+                  } catch {
+                    showToast('Could not copy — tap the email instead');
+                  }
+                }}
+                aria-label="Copy email address"
+              >
+                <FaCopy aria-hidden="true" />
+              </button>
             </div>
             <div className="contact-detail-item">
               <FaMapMarkerAlt aria-hidden="true" />

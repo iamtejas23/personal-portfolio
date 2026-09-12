@@ -17,7 +17,7 @@
 }
 
 /* ── Intro ─────────────────────────────────── */
-.about-intro h2 {
+.about-intro h1 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 800;
   color: #ffffff;
@@ -104,7 +104,7 @@
 
 .about-project-item:last-child { border-bottom: none; }
 
-.about-project-item h4 {
+.about-project-item h3 {
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-1, #efefef);
@@ -122,6 +122,18 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  position: relative;
+  padding-left: 8px;
+}
+
+.about-education::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.28), transparent);
 }
 
 .about-edu-item {
@@ -146,7 +158,7 @@
   margin-top: 2px;
 }
 
-.edu-detail h4 {
+.edu-detail h3 {
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-1, #efefef);

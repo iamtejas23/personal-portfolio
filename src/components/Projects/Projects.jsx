@@ -3,6 +3,7 @@ import { FaReact, FaDocker, FaAws, FaJenkins, FaGithub, FaExternalLinkAlt } from
 import './Projects.css';
 import { SiTerraform, SiAnsible, SiApachetomcat, SiApachemaven, SiArgo, SiNextdotjs } from 'react-icons/si';
 import { BiLogoKubernetes } from 'react-icons/bi';
+import { onTiltMove, onTiltLeave } from '../../hooks/tilt';
 
 import pro1 from '../../assets/1.png';
 import pro2 from '../../assets/2.png';
@@ -122,12 +123,42 @@ const projectsData = [
   },
 ];
 
+export { projectsData };
+
+const FILTERS = ['All', 'DevOps', 'Frontend', 'Mobile'];
+
 const Projects = () => {
+  const [filter, setFilter] = React.useState('All');
+  const visible = filter === 'All'
+    ? projectsData
+    : projectsData.filter((p) => p.category === filter);
+
   return (
     <section className="projects-section">
-      <h2 className="section-heading">Projects</h2>
+      <div className="projects-head">
+        <h2 className="section-heading">Projects</h2>
+        <div className="project-filters" role="tablist" aria-label="Filter projects">
+          {FILTERS.map((name) => (
+            <button
+              key={name}
+              type="button"
+              role="tab"
+              aria-selected={filter === name}
+              className={`project-filter${filter === name ? ' active' : ''}`}
+              onClick={() => setFilter(name)}
+            >
+              {name}
+              <span className="filter-count">
+                {name === 'All'
+                  ? projectsData.length
+                  : projectsData.filter((p) => p.category === name).length}
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="projects-grid">
-        {projectsData.map((project) => (
+        {visible.map((project) => (
           <article key={project.id} className="project-card-wrap">
             <a
               href={project.link}
@@ -135,6 +166,8 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="project-card"
               aria-label={`View ${project.name} project`}
+              onMouseMove={onTiltMove}
+              onMouseLeave={onTiltLeave}
             >
               <div className="project-img-wrap">
                 <img

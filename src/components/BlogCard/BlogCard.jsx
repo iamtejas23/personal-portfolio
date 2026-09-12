@@ -1,96 +1,93 @@
 import React from 'react';
-import { FaEthereum, FaExternalLinkAlt } from 'react-icons/fa';
-import { SiWeb3Dotjs, SiHiveBlockchain, SiBitcoincash } from 'react-icons/si';
+import { FaExternalLinkAlt, FaMedium } from 'react-icons/fa';
 import './BlogCard.css';
 import useSEO from '../../hooks/useSEO';
+import { onTiltMove, onTiltLeave } from '../../hooks/tilt';
 
-const blogData = [
+export const blogData = [
   {
-    icon: <SiBitcoincash size={36} />,
-    name: 'Blockchain',
-    color: '#F7931A',
-    description: 'Discover the intricacies of blockchain technology and its real-world applications.',
-    link: 'https://example.com/blockchain',
-    comingSoon: true,
+    name: 'SyncerD: Git Sync',
+    description:
+      'Keep Git repositories in sync across GitHub, GitLab, Bitbucket, Azure DevOps, and AWS CodeCommit — for migrations, backups, and provider outages.',
+    link: 'https://medium.com/@iamtejas23/syncerd-git-sync-931c1c9661d5',
+    date: 'Sep 3, 2026',
+    tags: ['Git', 'DevOps', 'CI/CD'],
+    image: 'https://cdn-images-1.medium.com/max/1024/1*HrFqAkq-RWxqB3-5bw2PVA.png',
   },
   {
-    icon: <SiWeb3Dotjs size={36} />,
-    name: 'WEB3',
-    color: '#a3a3ff',
-    description: 'Explore the decentralised web, smart contracts, and the future of the internet.',
-    link: 'https://example.com/web3',
-    comingSoon: true,
+    name: 'SyncerD: Container Image Synchronization',
+    description:
+      'Move container images between Docker Hub, ECR, and other registries so CI/CD and Kubernetes always pull from where you need them.',
+    link: 'https://medium.com/@iamtejas23/syncerd-container-image-synchronization-002f9ebc8b63',
+    date: 'Sep 2, 2026',
+    tags: ['Docker', 'ECR', 'Containers'],
+    image: 'https://cdn-images-1.medium.com/max/1024/1*ffB6xr3scuKZ4VQsUMP91w.png',
   },
   {
-    icon: <SiHiveBlockchain size={36} />,
-    name: 'DeFi',
-    color: '#4ade80',
-    description: 'Learn about decentralised finance protocols and how they reshape global banking.',
-    link: 'https://example.com/defi',
-    comingSoon: true,
-  },
-  {
-    icon: <FaEthereum size={36} />,
-    name: 'Ethereum',
-    color: '#c0c0ff',
-    description: 'Get insights into the Ethereum ecosystem, EVM, and smart contract development.',
-    link: 'https://example.com/ethereum',
-    comingSoon: true,
+    name: 'Introducing SyncerD: A Lightweight Synchronization Engine for Modern DevOps',
+    description:
+      'A lightweight engine for syncing Git repos and container images across platforms — built for multi-cloud DevOps teams.',
+    link: 'https://medium.com/@iamtejas23/introducing-syncerd-a-lightweight-synchronization-engine-for-modern-devops-f5dc1cc751ea',
+    date: 'Sep 2, 2026',
+    tags: ['SyncerD', 'Open Source', 'DevOps'],
+    image: 'https://cdn-images-1.medium.com/max/1024/1*bt8UCCFod0hCQ_vfW8NcBw.png',
   },
 ];
 
 const BlogCard = () => {
   useSEO({
-    title: 'Tech Blogs — Blockchain, Web3, DeFi & Ethereum | Tejas Mane',
-    description: 'Coming soon: tech blog posts by Tejas Mane covering blockchain, Web3, DeFi protocols, Ethereum smart contracts, and cloud-native DevOps topics.',
+    title: 'Blogs — SyncerD, Git Sync & Container Images | Tejas Mane',
+    description:
+      'Read Tejas Mane on Medium: introducing SyncerD, Git repository sync across providers, and container image synchronization for modern DevOps.',
     canonical: '/blogs',
   });
 
   return (
     <div className="blogs-page">
       <div className="blogs-header">
-        <h1 className="blogs-title">Tech Blogs by Tejas Mane</h1>
+        <h1 className="blogs-title">Writing</h1>
         <p className="blogs-subtitle">
-          Coming soon — deep dives into blockchain, Web3, DeFi, and Ethereum.
+          Notes on SyncerD and DevOps — Git sync, container images, and keeping
+          platforms in lockstep. Published on Medium.
         </p>
       </div>
 
       <div className="blog-grid">
-        {blogData.map((blog, index) => (
-          <div key={index} className="blog-card">
-            <div
-              className="blog-icon-wrap"
-              style={{ '--blog-color': blog.color }}
-              aria-hidden="true"
+        {blogData.map((blog) => (
+          <article key={blog.link} className="blog-card">
+            <a
+              href={blog.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="blog-card-link"
+              aria-label={`Read ${blog.name} on Medium`}
+              onMouseMove={onTiltMove}
+              onMouseLeave={onTiltLeave}
             >
-              <span style={{ color: blog.color }}>{blog.icon}</span>
-            </div>
-
-            <div className="blog-content">
-              <div className="blog-card-top">
-                <h2 className="blog-name">{blog.name}</h2>
-                {blog.comingSoon && (
-                  <span className="blog-soon-badge">Soon</span>
-                )}
+              <div className="blog-cover">
+                <img src={blog.image} alt="" loading="lazy" width="640" height="320" />
               </div>
-              <p className="blog-description">{blog.description}</p>
-            </div>
 
-            {!blog.comingSoon ? (
-              <a
-                href={blog.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="blog-link"
-              >
-                Read More <FaExternalLinkAlt size={11} />
-              </a>
-            ) : (
-              <span className="blog-link blog-link-disabled" aria-disabled="true">
-                Coming Soon
-              </span>
-            )}
-          </div>
+              <div className="blog-content">
+                <div className="blog-meta">
+                  <span className="blog-source">
+                    <FaMedium aria-hidden="true" /> Medium
+                  </span>
+                  <time dateTime={blog.date}>{blog.date}</time>
+                </div>
+                <h2 className="blog-name">{blog.name}</h2>
+                <p className="blog-description">{blog.description}</p>
+                <div className="blog-tags">
+                  {blog.tags.map((tag) => (
+                    <span key={tag} className="blog-tag">{tag}</span>
+                  ))}
+                </div>
+                <span className="blog-link">
+                  Read on Medium <FaExternalLinkAlt size={11} />
+                </span>
+              </div>
+            </a>
+          </article>
         ))}
       </div>
     </div>

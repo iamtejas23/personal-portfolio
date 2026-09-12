@@ -4,6 +4,7 @@ import {
   FaHome, FaInfoCircle, FaEnvelope, FaBars, FaTimes,
   FaGithub, FaLinkedin, FaFileAlt, FaInstagram, FaTwitter, FaNewspaper,
 } from 'react-icons/fa';
+import KolhapurClock from '../KolhapurClock/KolhapurClock';
 import './SideNav.css';
 
 const NAV_ITEMS = [
@@ -88,6 +89,15 @@ const SideNav = () => {
           </a>
         </nav>
 
+        <button
+          type="button"
+          className="nav-cmdk"
+          onClick={() => window.dispatchEvent(new Event('open-command-palette'))}
+        >
+          <span>Quick search</span>
+          <kbd>⌘K</kbd>
+        </button>
+
         <div className="nav-socials">
           <span className="socials-label">Connect</span>
           <div className="socials-list">
@@ -106,6 +116,8 @@ const SideNav = () => {
             ))}
           </div>
         </div>
+
+        <KolhapurClock />
 
       </aside>
     </>

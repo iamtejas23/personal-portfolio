@@ -3,6 +3,8 @@ import './home.css';
 import GitHubCard from '../../components/GitHubCard/GitHubCard ';
 import Projects from '../../components/Projects/Projects';
 import Skills from '../../components/Skills/Skills ';
+import LiveShell from '../../components/LiveShell/LiveShell';
+import TechMarquee from '../../components/TechMarquee/TechMarquee';
 import useSEO from '../../hooks/useSEO';
 
 const Home = () => {
@@ -34,6 +36,8 @@ const Home = () => {
         </div>
       </section>
 
+      <TechMarquee />
+      <LiveShell />
       <Projects />
       <Skills />
     </div>

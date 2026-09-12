@@ -46,6 +46,8 @@
 
   /* Layout */
   --sidebar-w: 250px;
+  --spot-x: 50%;
+  --spot-y: 18%;
 
   /* Typography */
   --font:      'Inter', system-ui, -apple-system, sans-serif;
@@ -142,3 +144,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .fade-in-up { animation: fadeInUp var(--duration-slow) var(--ease) both; }
+
+body.root-access {
+  filter: invert(1) hue-rotate(180deg);
+  transition: filter 200ms ease;
+}
