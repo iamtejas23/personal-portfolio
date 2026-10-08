@@ -1,6 +1,7 @@
 import React from 'react';
 import './hero.css';
 import hero from '../../assets/me.jpg';
+import resume from '../../assets/TejasManeResume.pdf';
 
 const Hero = () => {
   return (
@@ -23,7 +24,7 @@ const Hero = () => {
           </h1>
           <p>Crafting Tomorrow's Digital World Today.</p>
           <a
-            href="https://drive.google.com/file/d/1NwROYwW9BgRiA3XJCFF1f3rw1hDToBvo/view?usp=sharing"
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
             className="hero-btn"

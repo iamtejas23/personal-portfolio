@@ -8,6 +8,22 @@
   animation: fadeInUp 0.4s var(--ease, cubic-bezier(0.4, 0, 0.2, 1)) both;
 }
 
+.skip-link {
+  position: fixed;
+  z-index: 10000;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  transform: translateY(-160%);
+  border-radius: var(--radius-sm);
+  background: var(--bg-0);
+  color: var(--text-0);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 @media (min-width: 769px) {
   .page-content {
     margin-left: var(--sidebar-w, 250px);

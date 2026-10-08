@@ -2,11 +2,11 @@ import React from 'react';
 import './Skills.css';
 import {
   FaHtml5, FaJsSquare, FaCss3Alt, FaReact, FaNodeJs, FaAws,
-  FaDocker, FaNpm, FaGithub, FaServer, FaJenkins, FaBitbucket, FaCloud,
+  FaDocker, FaNpm, FaGithub, FaServer, FaJenkins, FaCloud,
 } from 'react-icons/fa';
 import { SiTerraform, SiAmazonec2, SiAmazonroute53, SiAnsible, SiMongodb,
   SiMysql, SiAmazoneks, SiPostman, SiNextdotjs, SiGrafana, SiRedux,
-  SiPrometheus, SiAwsorganizations } from 'react-icons/si';
+  SiPrometheus, SiAwsorganizations, SiAmazons3 } from 'react-icons/si';
 import { FaDatabase } from 'react-icons/fa6';
 import { BiLogoKubernetes, BiLogoPostgresql } from 'react-icons/bi';
 import { RiGatsbyFill } from 'react-icons/ri';
@@ -46,7 +46,7 @@ const SKILL_CARDS = [
     title: 'AWS',
     skills: [
       { icon: <SiAmazonec2 style={{ color: '#FF9900' }} />,        label: 'EC2' },
-      { icon: <FaBitbucket style={{ color: '#2684FF' }} />,         label: 'S3 Bucket' },
+      { icon: <SiAmazons3 style={{ color: '#FF9900' }} />,           label: 'Amazon S3' },
       { icon: <FaDatabase style={{ color: '#FF9900' }} />,          label: 'RDS' },
       { icon: <FaCloud style={{ color: '#a0a0b8' }} />,             label: 'VPC' },
       { icon: <SiAmazonroute53 style={{ color: '#FF9900' }} />,     label: 'Route 53' },

@@ -6,13 +6,11 @@ import Skills from '../../components/Skills/Skills ';
 import LiveShell from '../../components/LiveShell/LiveShell';
 import TechMarquee from '../../components/TechMarquee/TechMarquee';
 import useSEO from '../../hooks/useSEO';
+import { ROUTE_SEO } from '../../seo/seoConfig';
 
 const Home = () => {
   useSEO({
-    title: 'Tejas Mane | DevOps Engineer — AWS, Kubernetes & Cloud Expert',
-    description: 'DevOps Engineer from Kolhapur, India. Expert in AWS, Kubernetes, Docker, Terraform & Jenkins CI/CD. React developer. MCA graduate, 9.3 CGPA. Open to opportunities.',
-    canonical: '/',
-    ogType: 'profile',
+    ...ROUTE_SEO['/'],
   });
 
   return (

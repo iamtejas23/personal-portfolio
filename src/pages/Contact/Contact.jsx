@@ -3,12 +3,11 @@ import './contact.css';
 import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaCopy } from 'react-icons/fa';
 import useSEO from '../../hooks/useSEO';
 import { showToast } from '../../components/Toast/Toast';
+import { ROUTE_SEO } from '../../seo/seoConfig';
 
 const ContactForm = () => {
   useSEO({
-    title: 'Contact Tejas Mane — DevOps Engineer',
-    description: 'Get in touch with Tejas Mane, a DevOps Engineer from Kolhapur, India. Open to project collaborations, job opportunities, and general enquiries.',
-    canonical: '/contact',
+    ...ROUTE_SEO['/contact'],
   });
 
   return (

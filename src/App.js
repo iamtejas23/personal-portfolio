@@ -12,27 +12,36 @@ import Toast from './components/Toast/Toast';
 import CursorFollow from './components/CursorFollow/CursorFollow';
 import RouteFlash from './components/RouteFlash/RouteFlash';
 import HireDock from './components/HireDock/HireDock';
+import NotFound from './pages/NotFound/NotFound';
 import './App.css';
+
+export const AppShell = () => (
+  <>
+    <a className="skip-link" href="#main-content">Skip to content</a>
+    <AmbientFX />
+    <CursorFollow />
+    <RouteFlash />
+    <SideNav />
+    <CommandPalette />
+    <Toast />
+    <HireDock />
+    <main id="main-content" className="page-content">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/blogs" element={<BlogCard />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </main>
+  </>
+);
 
 const App = () => {
   return (
     <Router>
-      <AmbientFX />
-      <CursorFollow />
-      <RouteFlash />
-      <SideNav />
-      <CommandPalette />
-      <Toast />
-      <HireDock />
-      <main className="page-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/blogs" element={<BlogCard />} />
-        </Routes>
-        <Footer />
-      </main>
+      <AppShell />
     </Router>
   );
 };

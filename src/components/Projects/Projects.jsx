@@ -62,7 +62,7 @@ const projectsData = [
   {
     id: 8,
     name: 'Terraform Three-Tier Infra',
-    description: 'Three-tier architecture on AWS using Terraform IaC and Jenkins automation.',
+    description: 'Three-tier architecture on AWS using Terraform IaC and Jenkins automation, reducing setup time by 40%.',
     image: dev4,
     link: 'https://www.linkedin.com/posts/iamtejas23_devops-terraform-infrastructureascode-activity-7228700736308600832-z8TB?utm_source=share&utm_medium=member_desktop',
     category: 'DevOps',
@@ -174,6 +174,7 @@ const Projects = () => {
                   src={project.image}
                   alt={`${project.name} — ${project.description}`}
                   loading="lazy"
+                  decoding="async"
                   width="400"
                   height="225"
                 />

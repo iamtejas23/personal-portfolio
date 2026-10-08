@@ -5,6 +5,7 @@ import {
   FaGithub, FaLinkedin, FaFileAlt, FaInstagram, FaTwitter, FaNewspaper,
 } from 'react-icons/fa';
 import KolhapurClock from '../KolhapurClock/KolhapurClock';
+import resume from '../../assets/TejasManeResume.pdf';
 import './SideNav.css';
 
 const NAV_ITEMS = [
@@ -79,7 +80,7 @@ const SideNav = () => {
             </Link>
           ))}
           <a
-            href="https://drive.google.com/file/d/1NwROYwW9BgRiA3XJCFF1f3rw1hDToBvo/view?usp=sharing"
+            href={resume}
             target="_blank"
             rel="noopener noreferrer"
             className="nav-item"

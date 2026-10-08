@@ -7,6 +7,7 @@ import {
   SiKubernetes, SiTerraform, SiPrometheus, SiGrafana, SiAzuredevops, SiJenkins,
 } from 'react-icons/si';
 import useSEO from '../../hooks/useSEO';
+import { ROUTE_SEO } from '../../seo/seoConfig';
 
 const TECH_ITEMS = [
   { icon: <FaAws />,         label: 'AWS',          cls: 'aws'        },
@@ -24,10 +25,7 @@ const TECH_ITEMS = [
 
 const About = () => {
   useSEO({
-    title: 'About Tejas Mane — DevOps Engineer, AWS & Kubernetes Expert',
-    description: 'Learn about Tejas Mane, a DevOps Engineer from Kolhapur, India. Expert in AWS, Kubernetes, Docker, Terraform, Jenkins CI/CD, Ansible, ArgoCD, and React. MCA with 9.3 CGPA.',
-    canonical: '/about',
-    ogType: 'profile',
+    ...ROUTE_SEO['/about'],
   });
 
   return (
@@ -69,8 +67,8 @@ const About = () => {
             <p>Implemented GitOps principles for continuous application deployment using ArgoCD and kOps, improving cluster reliability.</p>
           </div>
           <div className="about-project-item">
-            <h3>ELK Stack Deployment on AWS</h3>
-            <p>Deployed ELK Stack on AWS for centralised monitoring with CloudWatch integration for enhanced observability and alerting.</p>
+            <h3>Docker CI/CD Pipeline</h3>
+            <p>Automated build and deployment for a Dockerized application using Jenkins and AWS.</p>
           </div>
         </div>
 

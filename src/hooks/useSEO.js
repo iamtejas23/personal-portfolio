@@ -1,31 +1,40 @@
 import { useEffect } from 'react';
-
-const BASE_URL = 'https://tejasmane.netlify.app';
+import { SITE_URL, buildStructuredData } from '../seo/seoConfig';
 
 /**
  * Updates document title, meta description, canonical URL, and OG/Twitter tags
  * per route. Call at the top of each page component.
  */
-const useSEO = ({ title, description, canonical, ogType = 'website', ogImage }) => {
+const useSEO = ({ title, description, canonical, ogType = 'website', ogImage, noindex = false }) => {
   useEffect(() => {
     const fullTitle = title
-      ? `${title} | Tejas Mane`
+      ? (title.includes('Tejas Mane') ? title : `${title} | Tejas Mane`)
       : 'Tejas Mane | DevOps Engineer — AWS, Kubernetes & Cloud Expert';
-    const fullCanonical = canonical ? `${BASE_URL}${canonical}` : BASE_URL;
-    const image = ogImage || `${BASE_URL}/tejas-mane.jpg`;
+    const fullCanonical = canonical
+      ? (canonical.startsWith('http') ? canonical : `${SITE_URL}${canonical}`)
+      : `${SITE_URL}${window.location.pathname}`;
+    const image = ogImage || `${SITE_URL}/og-tejas-mane.jpg`;
 
     document.title = fullTitle;
 
     setMeta('name', 'description', description);
 
+    setMeta(
+      'name',
+      'robots',
+      noindex ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+    );
+
     // Canonical
     let link = document.querySelector('link[rel="canonical"]');
-    if (!link) {
+    if (noindex) {
+      link?.remove();
+    } else if (!link) {
       link = document.createElement('link');
       link.rel = 'canonical';
       document.head.appendChild(link);
     }
-    link.href = fullCanonical;
+    if (!noindex) link.href = fullCanonical;
 
     // OG
     setMeta('property', 'og:title', fullTitle);
@@ -33,12 +42,25 @@ const useSEO = ({ title, description, canonical, ogType = 'website', ogImage }) 
     setMeta('property', 'og:url', fullCanonical);
     setMeta('property', 'og:type', ogType);
     setMeta('property', 'og:image', image);
+    setMeta('property', 'og:image:alt', 'Tejas Mane — DevOps Engineer and Frontend Developer');
 
     // Twitter
     setMeta('name', 'twitter:title', fullTitle);
+    setMeta('name', 'twitter:card', 'summary_large_image');
     setMeta('name', 'twitter:description', description);
     setMeta('name', 'twitter:image', image);
-  }, [title, description, canonical, ogType, ogImage]);
+
+    const schema = document.getElementById('route-jsonld');
+    if (noindex) {
+      schema?.remove();
+    } else {
+      const script = schema || document.createElement('script');
+      script.id = 'route-jsonld';
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(buildStructuredData(window.location.pathname));
+      if (!schema) document.head.appendChild(script);
+    }
+  }, [title, description, canonical, ogType, ogImage, noindex]);
 };
 
 const setMeta = (attr, value, content) => {

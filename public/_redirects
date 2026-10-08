@@ -1,5 +1,12 @@
 # Force HTTPS
 http://tejasmane.netlify.app/* https://tejasmane.netlify.app/:splat 301!
 
-# SPA fallback — all routes serve index.html (required for React Router on Netlify)
-/* /index.html 200
+# Keep public app routes on the SPA while returning a real 404 for unknown paths.
+/ /index.html 200
+/about/ /about 301
+/contact/ /contact 301
+/blogs/ /blogs 301
+/about /about/index.html 200!
+/contact /contact/index.html 200!
+/blogs /blogs/index.html 200!
+/* /404.html 404

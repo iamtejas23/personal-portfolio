@@ -19,7 +19,7 @@
 - 🚀 Love to build and automate **scalable cloud-native systems**
 - 🧩 Open to collaborations on **DevOps, Cloud, and Full-Stack projects**
 - 🗂️ Check out my **[Portfolio](https://tejasmane.netlify.app/)**
-- 📄 View my **[Resume](https://tejasmane.netlify.app/assets/Tejas.pdf)**
+- 📄 View my **[Resume](src/assets/TejasManeResume.pdf)**
 - 📬 Reach me at **tsmane8787@gmail.com**
 
 ---
