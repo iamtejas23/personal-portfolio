@@ -51,7 +51,7 @@ const GitHubCard = () => {
               className="avatar-img"
               width="84"
               height="84"
-              fetchPriority="high"
+              fetchpriority="high"
             />
             <span className="avatar-overlay" aria-hidden="true">Resume</span>
           </div>
