@@ -2,7 +2,6 @@ import React from 'react';
 import { FaExternalLinkAlt, FaMedium } from 'react-icons/fa';
 import './BlogCard.css';
 import useSEO from '../../hooks/useSEO';
-import { onTiltMove, onTiltLeave } from '../../hooks/tilt';
 import { BLOG_POSTS, ROUTE_SEO } from '../../seo/seoConfig';
 
 const BLOG_EXTRAS = [
@@ -43,8 +42,6 @@ const BlogCard = () => {
               rel="noopener noreferrer"
               className="blog-card-link"
               aria-label={`Read ${blog.name} on Medium`}
-              onMouseMove={onTiltMove}
-              onMouseLeave={onTiltLeave}
             >
               <div className="blog-cover">
                 <img src={blog.image} alt="" loading="lazy" decoding="async" width="640" height="320" />

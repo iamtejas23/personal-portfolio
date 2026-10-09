@@ -10,18 +10,6 @@
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
 }
 
-.ambient-spot {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    520px circle at var(--spot-x, 50%) var(--spot-y, 20%),
-    rgba(255, 255, 255, 0.055),
-    transparent 55%
-  );
-}
-
 .ambient-noise {
   position: fixed;
   inset: 0;
@@ -30,8 +18,4 @@
   opacity: 0.035;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ambient-spot { display: none; }
 }

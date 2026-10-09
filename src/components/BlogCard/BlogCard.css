@@ -51,7 +51,6 @@
   text-decoration: none;
   color: inherit;
   min-height: 100%;
-  transform-style: preserve-3d;
   transition: transform 180ms var(--ease, cubic-bezier(0.4,0,0.2,1));
 }
 

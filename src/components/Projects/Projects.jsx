@@ -3,7 +3,6 @@ import { FaReact, FaDocker, FaAws, FaJenkins, FaGithub, FaExternalLinkAlt } from
 import './Projects.css';
 import { SiTerraform, SiAnsible, SiApachetomcat, SiApachemaven, SiArgo, SiNextdotjs } from 'react-icons/si';
 import { BiLogoKubernetes } from 'react-icons/bi';
-import { onTiltMove, onTiltLeave } from '../../hooks/tilt';
 
 import pro1 from '../../assets/1.png';
 import pro2 from '../../assets/2.png';
@@ -166,8 +165,6 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="project-card"
               aria-label={`View ${project.name} project`}
-              onMouseMove={onTiltMove}
-              onMouseLeave={onTiltLeave}
             >
               <div className="project-img-wrap">
                 <img

@@ -83,30 +83,10 @@
   text-decoration: none;
   color: inherit;
   position: relative;
-  transform-style: preserve-3d;
   transition:
     transform 180ms var(--ease, cubic-bezier(0.4,0,0.2,1)),
     box-shadow 250ms ease,
     border-color 250ms ease;
-  will-change: transform;
-}
-
-.project-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    280px circle at var(--tilt-x, 50%) var(--tilt-y, 0%),
-    rgba(255, 255, 255, 0.12),
-    transparent 45%
-  );
-  opacity: 0;
-  transition: opacity 200ms ease;
-}
-
-.project-card:hover::after {
-  opacity: 1;
 }
 
 .project-card:hover {

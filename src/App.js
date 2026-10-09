@@ -9,7 +9,6 @@ import Footer from './components/Footer/Footer';
 import AmbientFX from './components/AmbientFX/AmbientFX';
 import CommandPalette from './components/CommandPalette/CommandPalette';
 import Toast from './components/Toast/Toast';
-import CursorFollow from './components/CursorFollow/CursorFollow';
 import RouteFlash from './components/RouteFlash/RouteFlash';
 import HireDock from './components/HireDock/HireDock';
 import NotFound from './pages/NotFound/NotFound';
@@ -19,7 +18,6 @@ export const AppShell = () => (
   <>
     <a className="skip-link" href="#main-content">Skip to content</a>
     <AmbientFX />
-    <CursorFollow />
     <RouteFlash />
     <SideNav />
     <CommandPalette />
